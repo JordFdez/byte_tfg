@@ -1,0 +1,58 @@
+create database byte;
+
+use byte;
+
+create table interprete(
+  id int primary key auto_increment,
+  nombre varchar(100),
+  imagen varchar(100)
+);
+
+create table genero(
+  id int primary key auto_increment,
+  nombre varchar(100),
+  imagen varchar(100)
+);
+
+create table canciones(
+    id int primary key auto_increment,
+    titulo varchar(100),
+    archivo varchar(100),
+    imagen varchar(100),
+    idgenero int,
+    idinterprete int,
+    foreign key (idgenero) references genero(id),
+    foreign key (idinterprete) references interprete(id)
+  );
+
+create table usuario(
+id int PRIMARY KEY auto_increment,
+nombre VARCHAR(100),
+apellido VARCHAR(100),
+email varchar(100),
+passwd varchar(100),
+fecha_nacimiento date,
+telefono int,
+hash varchar(32) null,
+active int(1) not null default '0'
+);
+
+/* hash y active para cuando usemos verificacion mediante correo.*/
+
+
+ALTER TABLE genero
+ADD COLUMN idusuario INT(11) NULL,
+ADD CONSTRAINT fk_genero_usuario FOREIGN KEY (idusuario) REFERENCES usuario(id);
+
+
+ALTER TABLE canciones
+ADD COLUMN idusuario INT(11) NULL,
+ADD CONSTRAINT fk_canciones_usuario FOREIGN KEY (idusuario) REFERENCES usuario(id);
+
+
+ALTER TABLE interprete
+ADD COLUMN idusuario INT(11) NULL,
+ADD CONSTRAINT fk_interprete_usuario FOREIGN KEY (idusuario) REFERENCES usuario(id);
+
+ALTER TABLE usuario
+ADD CONSTRAINT unique_email UNIQUE (email);

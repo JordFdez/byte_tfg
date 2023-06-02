@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "poppins", sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: gray;
+    display: grid;
+    place-items: center;
+    background-image: url("../img/fondo/fondo1.jpg");
+}
+header{
+    width: 85%;
+    height: 95%;
+    border: 1px inset rgb(178, 117, 235);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+}
+header .menu, .canciones {
+    width: 25%;
+    height: 90%;
+    /*border: 1px solid white;*/
+    background: rgb(38, 37, 37); /*fondo izquierda*/
+   /*box-shadow: 3px 0px 4px rgb(178, 117, 235); /* sombra derecha*/
+    color: white;
+}
+header .canciones{
+    width: 75%;
+    background: rgb(38, 37, 37);/*fondo derecha*/
+}
+header .reproductor {
+    width: 100%;
+    height: 10%;
+    /*border: 1px solid white; */
+    background: rgb(38, 37, 37); /* fondo abajo*/
+    
+    /*box-shadow: 3px 6px 11px rgb(178, 117, 235); /* sombra abajo derecha e izquierda */
+}
+
+header .menu .playlist{
+    font-size: 20px;
+    margin: 15px 0px 0px 20px ;
+    font-weight: 500;
+}
+header .menu .playlistdiv{
+    margin: 40px 0px 0px 20px ;
+}
+header .menu .playlistdiv h4{
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    color: white; /* letra h4 (playlist, recomen....)*/
+    cursor: pointer; /*cambiador de cursor cuando pasas por encima*/
+    display: flex;
+    align-items: center;
+    transition: .3s linear;
+}
+header .menu .playlistdiv h4:hover{
+    color: rgb(178, 117, 235); /* color  letra cuando seleccionas*/
+}
+header .menu .playlistdiv h4 span{
+    position: relative;
+    margin-right: 35px;
+}
+header .menu .playlistdiv h4 span::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border: 2px solid white; /* color circulos izquierda de h4 */
+    border-radius: 50%;
+    top: -4px;
+    transition: .3s linear;
+}
+header .menu .playlistdiv h4:hover span::before {
+    border: 2px solid rgb(178, 117, 235); /* color circulo cuando seleccionamos*/
+}
+header .menu .playlistdiv h4 .bi {
+    display: none;
+}
+header .menu .playlistdiv .active {
+    color: white; /* color final por defecto*/
+}
+
+header .menu .playlistdiv .active span {
+    display: none;
+}
+header .menu .playlistdiv .active .bi {
+    display: flex;
+    margin-right: 20px;
+}
+
+header .menu .menu_canciones {
+    width: 100%;
+    height: 420px;
+    /*border: 1px solid white;*/
+    margin-top: 15px;
+    overflow: auto;
+}
+header .menu .menu_canciones::-webkit-scrollbar {
+    display: none;
+}
+header .menu .menu_canciones li {
+    list-style-type: none;
+    position: relative;
+    padding: 5px 0px 5px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+header .menu .menu_canciones li:hover {
+    background: rgba(124, 124, 124, 0.1); /* sombra del cuadrado donde se encuentra la lista */ 
+}
+header .menu .menu_canciones li span {
+    font-size: 12px;
+    font-weight: 600;
+    color: white; /* color del 01 y 02*/
+}
+header .menu .menu_canciones li img {
+    width: 32px;
+    height: 32px;
+    margin-left: 25px;
+}
+header .menu .menu_canciones li h5 {
+    font-size: 11px;
+    margin-left: 15px;
+    width: 170px;
+    /*border: 1px solid white;*/
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    white-space: nowrap;
+}
+header .menu .menu_canciones li h5 .subtitulo{
+    font-size: 9px;
+    color: rgb(178, 117, 235); /* color nombre de autor*/
+}
+header .menu .menu_canciones li .bi{
+    position: absolute;
+    right: 15px;
+    top: 6px;
+}
+
+/**/
+
+header .canciones{
+    z-index: 2;
+}
+header .canciones::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background: url("../img/imagen3.jpg");
+    z-index: -1;
+}
+header .canciones nav {
+    width: 90%;
+    height: 10%;
+    /*border: 1px solid white;*/
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .canciones nav ul {
+    display: flex;
+}
+header .canciones nav ul li {
+    list-style: none;
+    position: relative;
+    font-size: 13px;
+    color: rgb(226, 226, 226); /* color letra*/
+    margin-right: 25px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+header .canciones nav ul li a{
+    list-style: none;
+    position: relative;
+    font-size: 13px;
+    color: rgb(178, 117, 235); /* color letra*/
+    margin-right: 25px;
+    cursor: pointer;
+    transition: .3s linear;
+    text-decoration: none;
+
+}
+#iniciar_sesion_href{
+    color: yellow;
+}
+header .canciones nav ul li a:hover {
+    color: white; /* color cuando seleccionamos*/
+}
+header .canciones nav ul li:nth-child(1) {
+    color: white;    
+}
+header .canciones nav ul li span {
+    position: absolute;
+    width: 100%;
+    height: 2.5px;
+    background: aqua;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;   
+}
+header .canciones nav .buscar {
+    position: relative;
+    width: 40%;
+    padding: 1px 10px;
+    border-radius: 20px;
+    /*border: 1px solid white;*/
+    color: rgb(178, 117, 235); /*color icono buscador*/
+}
+header .canciones nav .buscar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(178, 117, 235, .1); /* color detras del buscador hasta el final*/    
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+header .canciones nav .buscar .bi {
+    font-size: 13px;
+    padding: 3px 0px 0px 10px;
+}
+header .canciones nav .buscar input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    color: white; /* color letra del buscador*/
+    font-size: 12px;
+}
+header .canciones nav .user {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+header .canciones nav .user img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px rgb(178, 117, 235); /* sombra de imagen de usuario*/
+}
+header .canciones .contenido {
+    width: 90%;
+    height: 30%;
+    /*border: 1px solid white;*/
+    margin: auto;
+    padding-top: 20px;
+}
+header .canciones .contenido h1{
+    font-size: 25px;
+    font-weight: 600;
+}
+header .canciones .contenido p{
+    font-size: 11px;
+    font-weight: 400;
+    color: white;
+    margin: 5px;
+}
+header .canciones .contenido .botones{
+    margin-top: 15px;
+    width: 500px;
+    
+}
+header .canciones .contenido .botones a{
+    width: 130px;
+    height: 30px;
+    border: 2px solid rgb(178, 117, 235); /* borde boton*/
+    outline: none;
+    border-radius: 20px;
+    background: none; /* color fondo boton*/
+    color: white; /*color letra boton*/
+    cursor: pointer;
+    transition: .3s linear;
+    text-decoration: none;
+    
+}
+header .canciones .contenido .botones a span{
+font-size:medium;
+padding: 20px;
+}
+header .canciones .contenido .botones a:hover{
+    background: rgb(38, 37, 37); /* fondo boton al pasar raton*/
+    color: rgb(178, 117, 235); /* color letra al pasar raton*/
+}
+header .canciones .contenido .botones a:nth-child(2){
+    background: none; /* fondo boton al pasar raton*/
+    color: white; /* color letra al pasar raton*/
+}
+header .canciones .contenido .botones a:nth-child(2):hover{
+    background: rgb(38, 37, 37); /* fondo boton follow al pasar raton*/
+    color: rgb(178, 117, 235); /* color letra boton follow*/
+}
+header .canciones .canciones_populares{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 15px;
+   /* border: 1px solid white;*/
+}
+header .canciones .canciones_populares .h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .canciones .canciones_populares .h4 .bi{
+    color: rgb(178, 117, 235); /* color icono flechas*/
+    cursor: pointer;
+    transition: .3s linear;
+}
+header .canciones .canciones_populares .h4 .bi:hover{
+    color: white; /* color icono flechas al pasar raton*/
+}
+header .canciones .canciones_populares .canciones_pop{
+    width: 100%;
+    height: 150px;
+    margin-top: 15px;
+    display: flex;
+    /*border: 1px solid white;*/
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+header .canciones .canciones_populares .canciones_pop::-webkit-scrollbar{
+    display: none;
+}
+header .canciones .canciones_populares .canciones_pop li{
+    min-width: 100px;
+    height: 140px;
+    list-style-type: none;
+    margin-right: 10px;
+    transition: .3s linear;
+}
+header .canciones .canciones_populares .canciones_pop li:hover{
+    background: rgb(178, 117, 235, .1);
+}
+header .canciones .canciones_populares .canciones_pop li .img_play{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .canciones .canciones_populares .canciones_pop li .img_play img{
+    width: 100%;
+    height: 100%;
+}
+header .canciones .canciones_populares .canciones_pop li .img_play .bi{
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s linear;
+    opacity: 0;
+}
+header .canciones .canciones_populares .canciones_pop li:hover .img_play .bi{
+    opacity: 1;
+}
+header .canciones .canciones_populares .canciones_pop li h5{
+    padding: 5px 0px 0px 5px;
+    line-height: 15px;
+    font-size: 10px;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+header .canciones .canciones_populares .canciones_pop li h5 .subtitulo{
+    font-size: 9px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgb(178, 117, 235); /* color nombre autor*/
+}
+header .canciones .artistas_populares {
+    width: 90%;
+    height: auto;
+    /*border: 1px solid white;*/
+    margin: auto;
+    margin-top: 15px;
+}
+
+header .canciones .artistas_populares .h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .canciones .artistas_populares .h4 .bi{
+    color: rgb(178, 117, 235); /* color icono flechas*/
+    cursor: pointer;
+    transition: .3s linear;
+}
+header .canciones .artistas_populares .h4 .bi:hover{
+    color: white; /* color icono flechas al pasar raton*/
+}
+header .canciones .artistas_populares .item {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    display: flex;
+    /*border: 1px solid white;*/
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+header .canciones .artistas_populares .item::-webkit-scrollbar {
+    display: none;
+}
+
+header .canciones .artistas_populares .item li{
+    list-style-type: none;
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+header .canciones .artistas_populares .item li img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

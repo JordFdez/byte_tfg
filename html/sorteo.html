@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de inscripción para el festival de música</title>
+  <style>
+    body {
+        font-family: "poppins", sans-serif;
+        background-image: url("../img/fondo/fondo1.jpg");
+    }
+    h1 {
+        text-align: center;
+        color: rgb(178, 117, 235);;
+    }
+    .form-container {
+        width: 60%;
+        margin-left: 15%;
+        
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+        color: rgb(178, 117, 235);;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+    input[type="submit"] {
+        background-color: rgb(178, 117, 235);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+    .enviar:hover {
+        background-color: #45a049;
+    }
+    .atras:hover {
+        background-color: #eb1000;
+    }
+    .medio {
+            border: 1px inset rgb(178, 117, 235);
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+            margin-top: 2%;
+            padding-bottom: 80px;
+            background-size: 20%;
+            background-position-x:96%;
+            background-position-y: center;
+            background-color: rgb(38, 37, 37);
+            background-repeat:no-repeat;
+            color: white;
+            padding: 20px;
+            background-image: url(../img/sorteo/sorteo.jpg);
+        }
+        .izq{
+          float: left;
+          width: 15%;
+          margin-top: 10%;
+
+        }
+        .logo{
+          width: 300px;
+          height: 300px;
+          margin-left: -50px;
+        }
+        #fecha{
+          font-size: 20px;
+        }
+        .enviar{
+          margin-right: 748px;
+        }
+
+  </style>
+</head>
+<body>
+
+    <div class="medio">
+  <div class="izq">
+    <img src="../img/logo/logo_transparent.png" class="logo">
+  </div>
+  <div class="form-container">
+    <h1>Sorteo para el festival de música</h1>
+    <form action="sorteo_enviar.php" method="get">
+      <div class="form-group">
+        <label for="name">Nombre completo:</label>
+        <input type="text" id="name" name="nombre" >
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="correo" >
+        </div>
+        <div class="form-group">
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" name="telefono" >
+        </div>
+        <div class="form-group">
+          <label for="phone">Fecha Nacimiento:</label>
+          <input type="date" id="fecha" name="fecha">
+          </div>
+        <div class="form-group">
+        <label for="address">¿Por qué mereces ganar?:</label>
+        <textarea id="address" name="comentario" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Enviar" name="enviar" class="enviar">
+        <input type="submit" value="Back" name="atras" class="atras">
+        </div>
+
+        </form>
+        
+          </div>
+        </div>
+        </body>
+        </html>
